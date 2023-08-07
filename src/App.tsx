@@ -14,7 +14,7 @@ function App() {
         <SearchInput />
       </StyledDiv>
       <StyledDiv>
-        <Link />
+      <Link text="패션"/>
       </StyledDiv>
     </>
   );
