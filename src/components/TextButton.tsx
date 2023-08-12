@@ -2,16 +2,31 @@ import Button, { ButtonProps } from '@mui/material/Button';
 import { StyledEngineProvider } from '@mui/styled-engine';
 import styled from 'styled-components';
 
+enum TextButtonTheme {
+  CONTAINED,
+  OUTLINED,
+}
+
 type TextButtonProps = ButtonProps & {
   text: string;
+  theme?: TextButtonTheme;
 };
 
-function TextButton({ text, ...others }: TextButtonProps) {
+function TextButton({ text, theme, ...others }: TextButtonProps) {
+  if (theme === undefined) {
+    theme = TextButtonTheme.CONTAINED;
+  }
+
   const StyledButton = styled(Button)`
-    background-color: #570df8;
-    border: 0;
+    background-color: ${theme === TextButtonTheme.CONTAINED
+      ? '#570df8'
+      : 'transparent'};
+    border: 1px solid;
+    border-color: ${theme === TextButtonTheme.CONTAINED
+      ? 'transparent'
+      : 'rgb(166,173,187)'};
     border-radius: 8px;
-    color: #ffffff;
+    color: ${theme === TextButtonTheme.CONTAINED ? '#ffffff' : '#A6ADBB'};
     height: 48px;
     width: auto;
     padding: 0px 16px;
@@ -34,4 +49,4 @@ function TextButton({ text, ...others }: TextButtonProps) {
   );
 }
 
-export default TextButton;
+export { TextButton, TextButtonTheme };
