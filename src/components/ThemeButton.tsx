@@ -6,38 +6,35 @@ import { StyledEngineProvider } from '@mui/styled-engine';
 import WbSunnyOutlinedIcon from '@mui/icons-material/WbSunnyOutlined';
 import NightlightOutlinedIcon from '@mui/icons-material/NightlightOutlined';
 
+const StyledIconButton = styled(IconButton)``;
+
+const StyledWbSunnyOutlinedIcon = styled(WbSunnyOutlinedIcon)`
+  margin-right: 1rem;
+  color: #ffffff;
+  transition: all 0.3s ease-out;
+  transform: rotate(0deg);
+`;
+
+const StyledNightlightOutlinedIcon = styled(NightlightOutlinedIcon)`
+  color: #ffffff;
+  transform: rotate(0deg);
+`;
+
 function ThemeButton() {
   const [isActive, setIsActive] = useState(false);
 
-  const StyledIconButton = styled(IconButton)``;
-
-
-
-  const StyledWbSunnyOutlinedIcon = styled(WbSunnyOutlinedIcon)`
-    color: #ffffff;
-    transition: all 0.3s ease-out;
-    transform: rotate(0deg);
-    ${isActive ? 'transform: rotate(45deg)' : ''};
-  `;
-
-  const StyledNightlightOutlinedIcon = styled(NightlightOutlinedIcon)`
-    color: #ffffff;
-    transform: rotate(0deg);
-    ${isActive ? 'transform: rotate(-45deg)' : ''};
-  `;
-
   return (
     <StyledEngineProvider injectFirst>
-      <StyledIconButton 
+      <StyledIconButton
         onClick={() => {
           setIsActive(!isActive);
         }}
       >
-        {/* {isActive ? (
+        {isActive ? (
+          <StyledNightlightOutlinedIcon />
+        ) : (
           <StyledWbSunnyOutlinedIcon />
-        ) : ( */}
-        <StyledNightlightOutlinedIcon />
-        {/* )} */}
+        )}
       </StyledIconButton>
     </StyledEngineProvider>
   );
