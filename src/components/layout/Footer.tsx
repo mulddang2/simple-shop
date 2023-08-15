@@ -1,13 +1,13 @@
 import { styled } from 'styled-components';
-import { ReactComponent as Visa } from '../../assets/images/visa.svg';
-import { ReactComponent as Master } from '../../assets/images/Master.svg';
-import { ReactComponent as Amex } from '../../assets/images/Amex.svg';
-import { ReactComponent as Paypal } from '../../assets/images/Paypal.svg';
-import { ReactComponent as DinersClub } from '../../assets/images/DinersClub.svg';
-import { ReactComponent as Discover } from '../../assets/images/Discover.svg';
-import { ReactComponent as Facebook } from '../../assets/images/Facebook.svg';
-import { ReactComponent as Instagram } from '../../assets/images/Instagram.svg';
-import { ReactComponent as GitHub } from '../../assets/images/GitHub.svg';
+import Visa from '../../assets/images/visa.svg';
+import Master from '../../assets/images/Master.svg';
+import Amex from '../../assets/images/Amex.svg';
+import Paypal from '../../assets/images/Paypal.svg';
+import DinersClub from '../../assets/images/DinersClub.svg';
+import Discover from '../../assets/images/Discover.svg';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import { Tooltip } from '@mui/material';
 
@@ -36,12 +36,12 @@ const StyledFooter = styled.footer`
     display: grid;
     column-gap: 16px;
     grid-auto-flow: column;
+
+    > a > svg {
+      fill: rgb(166, 173, 187);
+    }
   }
 `;
-
-const SnsStyle = {
-  fill: 'rgb(166, 173, 187)',
-};
 
 function Footer() {
   return (
@@ -53,38 +53,38 @@ function Footer() {
       </div>
       <ul>
         <li>
-          <Visa />
+          <img src={Visa} />
         </li>
         <li>
-          <Master />
+          <img src={Master} />
         </li>
         <li>
-          <Amex />
+          <img src={Amex} />
         </li>
         <li>
-          <Paypal />
+          <img src={Paypal} />
         </li>
         <li>
-          <DinersClub />
+          <img src={DinersClub} />
         </li>
         <li>
-          <Discover />
+          <img src={Discover} />
         </li>
       </ul>
       <div className="sns">
         <Tooltip title="facebook" placement="top">
           <a href="https://www.facebook.com/0base" target="_blank">
-            <Facebook {...SnsStyle} />
+            <FacebookIcon />
           </a>
         </Tooltip>
         <Tooltip title="instagram" placement="top">
           <a href="https://www.instagram.com/" target="_blank">
-            <Instagram {...SnsStyle} />
+            <InstagramIcon />
           </a>
         </Tooltip>
         <Tooltip title="github" placement="top">
           <a href="https://github.com/mulddang2" target="_blank">
-            <GitHub {...SnsStyle} />
+            <GitHubIcon />
           </a>
         </Tooltip>
       </div>
