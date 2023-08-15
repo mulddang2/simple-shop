@@ -11,38 +11,39 @@ import { ReactComponent as GitHub } from '../../assets/images/GitHub.svg';
 
 import { Tooltip } from '@mui/material';
 
-function Footer() {
-  const StyledFooter = styled.footer`
-    background-color: rgb(36, 41, 51);
-    color: rgb(166, 173, 187);
-    text-align: center;
-    place-items: center;
-    padding: 2.5rem;
+const StyledFooter = styled.footer`
+  background-color: rgb(36, 41, 51);
+  color: rgb(166, 173, 187);
+  text-align: center;
+  place-items: center;
+  padding: 2.5rem;
+  display: grid;
+  width: 100%;
+  grid-auto-flow: row dense;
+  row-gap: 2.5rem;
+  font-size: 0.875rem;
+  column-gap: 1rem;
+  line-height: 1.25rem;
+
+  > * {
+    gap: 0.5rem;
+  }
+  ul {
+    display: flex;
+    justify-content: center;
+  }
+  .sns {
     display: grid;
-    width: 100%;
-    grid-auto-flow: row dense;
-    row-gap: 2.5rem;
-    font-size: 0.875rem;
-    column-gap: 1rem;
-    line-height: 1.25rem;
+    column-gap: 16px;
+    grid-auto-flow: column;
+  }
+`;
 
-    > * {
-      gap: 0.5rem;
-    }
-    ul {
-      display: flex;
-      justify-content: center;
-    }
-    .sns {
-      display: grid;
-      column-gap: 16px;
-      grid-auto-flow: column;
-    }
-  `;
-  const SnsStyle = {
-    fill: 'rgb(166, 173, 187)',
-  };
+const SnsStyle = {
+  fill: 'rgb(166, 173, 187)',
+};
 
+function Footer() {
   return (
     <StyledFooter>
       <div>
