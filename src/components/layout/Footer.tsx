@@ -1,10 +1,10 @@
 import { styled } from 'styled-components';
-import Visa from '../../assets/images/visa.svg';
-import Master from '../../assets/images/Master.svg';
-import Amex from '../../assets/images/Amex.svg';
-import Paypal from '../../assets/images/Paypal.svg';
-import DinersClub from '../../assets/images/DinersClub.svg';
-import Discover from '../../assets/images/Discover.svg';
+import { ReactComponent as Visa } from '../../assets/images/visa.svg';
+import { ReactComponent as Master } from '../../assets/images/Master.svg';
+import { ReactComponent as Amex } from '../../assets/images/Amex.svg';
+import { ReactComponent as Paypal } from '../../assets/images/Paypal.svg';
+import { ReactComponent as DinersClub } from '../../assets/images/DinersClub.svg';
+import { ReactComponent as Discover } from '../../assets/images/Discover.svg';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -53,22 +53,22 @@ function Footer() {
       </div>
       <ul>
         <li>
-          <img src={Visa} />
+          <Visa />
         </li>
         <li>
-          <img src={Master} />
+          <Master />
         </li>
         <li>
-          <img src={Amex} />
+          <Amex />
         </li>
         <li>
-          <img src={Paypal} />
+          <Paypal />
         </li>
         <li>
-          <img src={DinersClub} />
+          <DinersClub />
         </li>
         <li>
-          <img src={Discover} />
+          <Discover />
         </li>
       </ul>
       <div className="sns">
