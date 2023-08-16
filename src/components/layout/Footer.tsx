@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import visa from "../../assets/visa.svg";
+import visa from "../../assets/Visa.svg";
 import master from "../../assets/Master.svg";
 import amex from "../../assets/Amex.svg";
 import paypal from "../../assets/Paypal.svg";
