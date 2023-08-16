@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { API } from '../utils/api';
 import { useAppDispatch } from '../hooks/useRedux';
 import { addItem } from '../store/cart/CartSlice';
+import { toast } from 'react-hot-toast';
 
 interface ProductCardProps {
   productId: number | null;
@@ -141,10 +142,11 @@ function ProductCard({ productId }: ProductCardProps) {
             <p className="price">${product.price}</p>
             <div className="card-action">
               <TextButton
-                text={'장바구니에 담기'}
+                text={'장바구니에 담기'} 
                 theme={TextButtonTheme.DEFAULT}
                 onClick={() => {
                   dispatch(addItem(product.id));
+                  toast.success(`장바구니에 ${product.title}을(를) 담았습니다.`)
                 }}
               />
               <TextButton

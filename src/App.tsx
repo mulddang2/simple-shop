@@ -9,10 +9,12 @@ import Accessory from './pages/Accessory';
 import Digital from './pages/Digital';
 import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <>
+      <Toaster containerStyle={{ fontSize: "1rem" }} position="top-center" reverseOrder={false} />
       <Header />
       <div className="body">
         <Routes>
