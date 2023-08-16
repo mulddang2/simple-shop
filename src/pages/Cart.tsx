@@ -11,6 +11,8 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const CartContainer = styled.div`
   min-height: calc(100vh - 4.5rem - 296px);
@@ -23,6 +25,12 @@ const CartContainer = styled.div`
     align-items: start;
     max-width: 1360px;
     margin: 0 auto;
+    .not-exist {
+      color: #a6adbb;
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 2.5rem;
+    }
 
     > div:nth-of-type(1) {
       display: flex;
@@ -50,6 +58,7 @@ function Cart() {
   const cartItems = useAppSelector(selectCartItems);
   const [products, SetProducts] = useState<Product[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
+  const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
 
@@ -59,7 +68,7 @@ function Cart() {
   const handleClear = () => {
     dispatch(clearItem());
     setOpen(false);
-  }
+  };
   const handleClose = () => {
     setOpen(false);
   };
@@ -88,9 +97,22 @@ function Cart() {
     <CartContainer>
       <div>
         <div>
-          {products.map((product: Product, index: number) => {
-            return <CartCard key={index} product={product} />;
-          })}
+          {products.length > 0 ? (
+            products.map((product: Product, index: number) => {
+              return <CartCard key={index} product={product} />;
+            })
+          ) : (
+            <div>
+              <p className="not-exist">장바구니에 물품이 없습니다.</p>
+              <TextButton
+                text="담으러 가기"
+                theme={TextButtonTheme.DEFAULT}
+                onClick={() => {
+                  navigate('/');
+                }}
+              />
+            </div>
+          )}
         </div>
         <div>
           <p>총 : ${totalPrice}</p>
@@ -98,7 +120,11 @@ function Cart() {
             text="구매하기"
             theme={TextButtonTheme.DEFAULT}
             onClick={() => {
-              handleClickOpen();
+              if (products.length > 0) {
+                handleClickOpen();
+              } else {
+                toast.error('구매할 물품이 없습니다 😵');
+              }
             }}
           />
         </div>
@@ -110,7 +136,7 @@ function Cart() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          {"정말로 구매하시겠습니까?"}
+          {'정말로 구매하시겠습니까?'}
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
@@ -118,9 +144,16 @@ function Cart() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <TextButton text="네" theme={TextButtonTheme.DEFAULT} onClick={handleClear} />
-          <TextButton text="아니오" theme={TextButtonTheme.OUTLINED} onClick={handleClose} />
-          
+          <TextButton
+            text="네"
+            theme={TextButtonTheme.DEFAULT}
+            onClick={handleClear}
+          />
+          <TextButton
+            text="아니오"
+            theme={TextButtonTheme.OUTLINED}
+            onClick={handleClose}
+          />
         </DialogActions>
       </Dialog>
     </CartContainer>
