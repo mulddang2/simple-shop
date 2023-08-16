@@ -5,6 +5,7 @@ import { Rating } from '@mui/material';
 import StarIcon from '@mui/icons-material/Star';
 import TextButton, { TextButtonTheme } from './TextButton';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { API } from '../utils/api';
 import { useAppDispatch } from '../hooks/useRedux';
 import { addItem } from '../store/cart/CartSlice';
@@ -95,6 +96,7 @@ const NewBadge = styled.span`
 
 function ProductCard({ productId }: ProductCardProps) {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const [product, setProduct] = useState<Product | null>(null);
 
   useEffect(() => {
@@ -142,16 +144,21 @@ function ProductCard({ productId }: ProductCardProps) {
             <p className="price">${product.price}</p>
             <div className="card-action">
               <TextButton
-                text={'장바구니에 담기'} 
+                text={'장바구니에 담기'}
                 theme={TextButtonTheme.DEFAULT}
                 onClick={() => {
                   dispatch(addItem(product.id));
-                  toast.success(`장바구니에 ${product.title}을(를) 담았습니다.`)
+                  toast.success(
+                    `장바구니에 ${product.title}을(를) 담았습니다.`
+                  );
                 }}
               />
               <TextButton
                 text={'장바구니로 이동'}
                 theme={TextButtonTheme.OUTLINED}
+                onClick={() => {
+                  navigate('/cart');
+                }}
               />
             </div>
           </ContentContainer>
