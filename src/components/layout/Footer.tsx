@@ -1,15 +1,15 @@
-import { styled } from 'styled-components';
-import { ReactComponent as Visa } from '../../assets/images/visa.svg';
-import { ReactComponent as Master } from '../../assets/images/Master.svg';
-import { ReactComponent as Amex } from '../../assets/images/Amex.svg';
-import { ReactComponent as Paypal } from '../../assets/images/Paypal.svg';
-import { ReactComponent as DinersClub } from '../../assets/images/DinersClub.svg';
-import { ReactComponent as Discover } from '../../assets/images/Discover.svg';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import { styled } from "styled-components";
+import visa from "../../assets/visa.svg";
+import master from "../../assets/Master.svg";
+import amex from "../../assets/Amex.svg";
+import paypal from "../../assets/Paypal.svg";
+import dinersclub from "../../assets/DinersClub.svg";
+import discover from "../../assets/Discover.svg";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
-import { Tooltip } from '@mui/material';
+import { Tooltip } from "@mui/material";
 
 const StyledFooter = styled.footer`
   background-color: rgb(36, 41, 51);
@@ -53,22 +53,22 @@ function Footer() {
       </div>
       <ul>
         <li>
-          <Visa />
+          <img src={visa} />
         </li>
         <li>
-          <Master />
+          <img src={master} />
         </li>
         <li>
-          <Amex />
+          <img src={amex} />
         </li>
         <li>
-          <Paypal />
+          <img src={paypal} />
         </li>
         <li>
-          <DinersClub />
+          <img src={dinersclub} />
         </li>
         <li>
-          <Discover />
+          <img src={discover} />
         </li>
       </ul>
       <div className="sns">

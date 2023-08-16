@@ -3,9 +3,9 @@ import { Carousel } from 'react-responsive-carousel';
 import { styled } from 'styled-components';
 import TextButton, { TextButtonTheme } from '../components/TextButton';
 import { useNavigate } from 'react-router-dom';
-import ImgShopFashion from '../assets/images/img_shop_fashion.jpeg';
-import ImgShopDigital from '../assets/images/img_shop_digital.jpeg';
-import ImgShopGrocery from '../assets/images/img_shop_grocery.jpeg';
+import ImgShopFashion from '../assets/img_shop_fashion.jpeg';
+import ImgShopDigital from '../assets/img_shop_digital.jpeg';
+import ImgShopGrocery from '../assets/img_shop_grocery.jpeg';
 
 const CarouselContainer = styled.section`
   .carousel-slider:before {
