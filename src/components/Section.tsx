@@ -9,13 +9,9 @@ export type SectionProps = {
   url: string;
 };
 
-// TODO: margin-left, maring-right 변경하기
 const StyledSection = styled.section`
   width: 100%;
-  /* margin-left: 271.5px;
-margin-right: 271.5px; */
   max-width: 1360px;
-  /* margin-top: 2.5rem; */
   padding: 48px 8px 32px;
 
   > h2 {

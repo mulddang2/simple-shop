@@ -3,14 +3,10 @@ import MainSlider from '../components/MainSlider';
 import Section from '../components/Section';
 
 const HomeContainer = styled.div`
-  /* background-color: #fff; */
   display: flex;
   background-color: rgb(42, 48, 60);
   flex-direction: column;
   align-items: center;
-  /* > section:first-of-type {
-    margin-top: 2.5rem;
-  } */
   > section:last-of-type {
     margin-bottom: 5rem;
   }

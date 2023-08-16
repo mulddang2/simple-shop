@@ -6,11 +6,9 @@ type SideMenuProps = {
   href?: string;
 };
 
-// TODO: fff는 라이트모드일때,
 const StyledSideMenu = styled.div`
   width: 20rem;
   padding: 1rem;
-  /* background-color: #fff; */
   background-color: rgb(42, 48, 60);
   z-index: 10;
   max-height: 100vh;
@@ -21,12 +19,9 @@ const StyledSideMenu = styled.div`
   flex-wrap: wrap;
 `;
 
-
-// TODO: #374751 은 라이트모드일때,
 const StyledLinkList = styled.a`
   display: flex;
   padding: 12px 16px;
-  /* color: #374151; */
   color: #fff;
   font-size: 1rem;
   font-weight: 400;
@@ -34,7 +29,6 @@ const StyledLinkList = styled.a`
     border-radius: var(--rounded-btn, 0.5rem);
     background-color: rgba(166, 173, 187, 0.1);
     cursor: pointer;
-    /* background-color: rgba(31, 41, 55, 0.1); */
   }
 `;
 

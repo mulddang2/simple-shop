@@ -45,7 +45,6 @@ const StyledCard = styled.a`
     flex-shrink: 1;
     flex: 1 1 auto;
     gap: 0.5rem;
-    /* height: 156px; */
     > p {
       align-items: center;
       color: rgb(166, 173, 187);

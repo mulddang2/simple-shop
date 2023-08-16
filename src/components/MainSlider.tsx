@@ -1,4 +1,4 @@
-import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import { styled } from 'styled-components';
 import TextButton, { TextButtonTheme } from '../components/TextButton';
@@ -13,7 +13,6 @@ const CarouselContainer = styled.section`
     display: block;
     left: 0;
     top: 0;
-    /* padding-top: 4rem; */
     height: 100%;
     background-color: #0000001a;
     display: flex;

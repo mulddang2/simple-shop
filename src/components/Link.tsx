@@ -11,7 +11,6 @@ type LinkProps = MuiLinkProps & {
 const StyledLink = styled(MuiLink)`
   display: inline-block;
   color: #fff;
-  /* color: #374151; */
   font-size: 14px;
   padding: 0 12px;
   height: 32px;
