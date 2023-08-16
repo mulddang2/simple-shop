@@ -6,6 +6,11 @@ import TextButton, { TextButtonTheme } from '../components/TextButton';
 import { useEffect, useState } from 'react';
 import { Product } from '../types/Product';
 import { API } from '../utils/api';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 const CartContainer = styled.div`
   min-height: calc(100vh - 4.5rem - 296px);
@@ -46,6 +51,19 @@ function Cart() {
   const [products, SetProducts] = useState<Product[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClear = () => {
+    dispatch(clearItem());
+    setOpen(false);
+  }
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   useEffect(() => {
     (async () => {
       const newProducts: Product[] = [];
@@ -80,11 +98,31 @@ function Cart() {
             text="구매하기"
             theme={TextButtonTheme.DEFAULT}
             onClick={() => {
-              dispatch(clearItem());
+              handleClickOpen();
             }}
           />
         </div>
       </div>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"정말로 구매하시겠습니까?"}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            장바구니의 모든 상품들이 삭제됩니다.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <TextButton text="네" theme={TextButtonTheme.DEFAULT} onClick={handleClear} />
+          <TextButton text="아니오" theme={TextButtonTheme.OUTLINED} onClick={handleClose} />
+          
+        </DialogActions>
+      </Dialog>
     </CartContainer>
   );
 }
