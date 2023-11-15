@@ -5,11 +5,11 @@ import App from './App.tsx';
 import './index.css';
 import { Provider } from 'react-redux';
 import store from './store/index.ts';
-import GlobalStyle from './styles/GlobalStyle.ts';
+import GlobalStyles from './styles/GlobalStyles.ts';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <GlobalStyle />
+    <GlobalStyles />
     <Provider store={store}>
       <BrowserRouter>
         <App />

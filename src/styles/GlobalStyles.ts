@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 // base setting
 * {
   margin: 0;
@@ -221,4 +221,4 @@ ol {
 
 `;
 
-export default GlobalStyle;
+export default GlobalStyles;
