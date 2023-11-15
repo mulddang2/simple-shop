@@ -1,6 +1,5 @@
 import { styled } from 'styled-components';
 import Link from '../Link';
-import ThemeButton from '../ThemeButton';
 import SearchInput from '../SearchInput';
 import CartButton from '../CartButton';
 import { useNavigate } from 'react-router-dom';
@@ -70,7 +69,7 @@ function Header() {
                 navigate('/');
               }}
             >
-              React Shop
+              Simple Shop
             </a>
           </h1>
           <div className="header-left">
@@ -79,7 +78,7 @@ function Header() {
             <Link text="디지털" href="/digital" />
           </div>
           <div className="header-right">
-            <ThemeButton />
+            {/* <ThemeButton /> */}
             <SearchInput />
             <CartButton
               onClick={() => {

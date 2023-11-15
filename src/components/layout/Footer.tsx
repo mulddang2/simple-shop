@@ -47,8 +47,8 @@ function Footer() {
   return (
     <StyledFooter>
       <div>
-        <a href="http://zero-base.co.kr/" target="_blank">
-          제로베이스
+        <a href="https://github.com/mulddang2/simple-shop" target="_blank">
+        Simple Shop
         </a>
       </div>
       <ul>
@@ -89,7 +89,7 @@ function Footer() {
         </Tooltip>
       </div>
       <div>
-        <p>Copyright © 2022 Zero Base</p>
+        <p>Copyright © 2023 Simple Shop</p>
       </div>
     </StyledFooter>
   );
